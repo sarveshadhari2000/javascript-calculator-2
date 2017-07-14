@@ -35,6 +35,7 @@ h1 {
     left: 0;
     right: 0;
     margin: auto;
+    border-radius: 10px;
 }
 
 #total,
@@ -84,6 +85,11 @@ h1 {
 .key p {
     font-size: 2.5em;
     margin-top: 25px
+}
+
+p.lg {
+    font-size: 4.3em;
+    margin-top: 8px;
 }
 
 .extra {
