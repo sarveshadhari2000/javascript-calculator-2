@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
-    //get data when calculator key is pushed
+    var calcStr = "";
+    var total = false;
+
+    //get data when calculator key is clicked
     document.getElementById('keypad').addEventListener('click', getKey);
 
     function getKey(k) {
@@ -9,15 +12,28 @@ $(document).ready(function() {
     }
 
     function compute(data) {
-        console.log(data);
 
+        //show numbers in display as typed
         if (data >= 0 && data <= 9) {
-            console.log(data);
+            if (total) {
+                calcStr = "";
+                calcStr += data;
+                total = false;
+                document.getElementById("display").innerHTML = calcStr;
+                return 1;
+            } else {
+                console.log(calcStr);
+                document.getElementById("display").innerHTML = calcStr;
+                return 1;
+            }
 
         } else {
             console.log("Not a number");
         }
-        document.getElementById("display").innerHTML = data;
+        console.log(calcStr);
+        console.log(total);
+
+
     }
 
 
