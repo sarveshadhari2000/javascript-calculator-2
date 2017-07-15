@@ -13,14 +13,6 @@ $(document).ready(function() {
         compute(key);
     }
 
-    //calculate percentage
-    function percent(fn) {
-        var nosym = fn;
-        console.log("test " + nosym);
-        var test = "halp!";
-        return test;
-    }
-
     function compute(data) {
         //NUMBERS
         if (data >= 0 && data <= 9) {
@@ -81,12 +73,6 @@ $(document).ready(function() {
             document.getElementById("display").innerHTML = calcStr;
             document.getElementById("history").innerHTML = histStr;
         }
-        if (data == "percent") {
-            calcStr += "%";
-            histStr += "%";
-            document.getElementById("display").innerHTML = (calcStr = percent(calcStr));
-            document.getElementById("history").innerHTML = (calcStr = percent(calcStr));
-        }
 
         //EQUALS
         if (data == "equals") {
@@ -97,6 +83,7 @@ $(document).ready(function() {
         }
         console.log(data);
         console.log(calcStr);
+        console.log(histStr);
         console.log(visible);
     }
 });
