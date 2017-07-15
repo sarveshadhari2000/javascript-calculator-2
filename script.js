@@ -6,7 +6,6 @@ $(document).ready(function() {
     function getKey(k) {
         var key = k.target.id;
         compute(key);
-        //compute(key);
     }
 
     function compute(data) {
@@ -14,9 +13,11 @@ $(document).ready(function() {
 
         if (data >= 0 && data <= 9) {
             console.log(data);
+
         } else {
             console.log("Not a number");
         }
+        document.getElementById("display").innerHTML = data;
     }
 
 
