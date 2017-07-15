@@ -14,14 +14,18 @@ $(document).ready(function() {
     function compute(data) {
 
         //show numbers in display as typed
+
+        //console.log(data);
         if (data >= 0 && data <= 9) {
             if (total) {
                 calcStr = "";
                 calcStr += data;
                 total = false;
+                console.log(data);
                 document.getElementById("display").innerHTML = calcStr;
                 return 1;
             } else {
+                calcStr += data;
                 console.log(calcStr);
                 document.getElementById("display").innerHTML = calcStr;
                 return 1;
