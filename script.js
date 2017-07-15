@@ -4,9 +4,22 @@ $(document).ready(function() {
     document.getElementById('keypad').addEventListener('click', getKey);
 
     function getKey(k) {
-
-        console.log(k.target.id);
+        var key = k.target.id;
+        compute(key);
+        //compute(key);
     }
+
+    function compute(data) {
+        console.log(data);
+
+        if (data >= 0 && data <= 9) {
+            console.log(data);
+        } else {
+            console.log("Not a number");
+        }
+    }
+
+
 
 });
 
