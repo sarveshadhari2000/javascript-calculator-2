@@ -14,8 +14,6 @@ $(document).ready(function() {
     function compute(data) {
 
         //show numbers in display as typed
-
-        //console.log(data);
         if (data >= 0 && data <= 9) {
             if (total) {
                 calcStr = "";
@@ -23,17 +21,36 @@ $(document).ready(function() {
                 total = false;
                 console.log(data);
                 document.getElementById("display").innerHTML = calcStr;
-                return 1;
+
             } else {
                 calcStr += data;
                 console.log(calcStr);
                 document.getElementById("display").innerHTML = calcStr;
-                return 1;
+
             }
 
+            //Decimal and Operator Functions
         } else {
-            console.log("Not a number");
+            if (data == "dpoint") {
+                 if (total) {
+                calcStr = "";
+                calcStr += ".";
+                total = false;
+                console.log(data);
+                document.getElementById("display").innerHTML = calcStr;
+
+            } else {
+                calcStr += ".";
+                console.log(calcStr);
+                document.getElementById("display").innerHTML = calcStr;
+
+            }
+            } else {
+                console.log("Not a number");
+            }
+            
         }
+        console.log(data);
         console.log(calcStr);
         console.log(total);
 
