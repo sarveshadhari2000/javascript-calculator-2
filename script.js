@@ -12,44 +12,62 @@ $(document).ready(function() {
     }
 
     function compute(data) {
-
-        //show numbers in display as typed
+        //NUMBERS
         if (data >= 0 && data <= 9) {
             if (total) {
                 calcStr = "";
                 calcStr += data;
                 total = false;
-                console.log(data);
                 document.getElementById("display").innerHTML = calcStr;
 
             } else {
                 calcStr += data;
-                console.log(calcStr);
                 document.getElementById("display").innerHTML = calcStr;
 
             }
-
-            //Decimal and Operator Functions
-        } else {
-            if (data == "dpoint") {
-                 if (total) {
+            //DECIMAL
+        }
+        if (data == "dpoint") {
+            if (total) {
                 calcStr = "";
                 calcStr += ".";
                 total = false;
-                console.log(data);
                 document.getElementById("display").innerHTML = calcStr;
 
             } else {
                 calcStr += ".";
-                console.log(calcStr);
                 document.getElementById("display").innerHTML = calcStr;
 
             }
-            } else {
-                console.log("Not a number");
-            }
-            
         }
+
+        //OPERATORS
+        if (data == "plus") {
+            total = false;
+            calcStr += "+";
+            document.getElementById("display").innerHTML = calcStr;
+        }
+        if (data == "minus") {
+            total = false;
+            calcStr += "-";
+            document.getElementById("display").innerHTML = calcStr;
+        }
+        if (data == "mult") {
+            total = false;
+            calcStr += "&#215;";
+            document.getElementById("display").innerHTML = calcStr;
+        }
+        if (data == "divide") {
+            total = false;
+            calcStr += "&#247;";
+            document.getElementById("display").innerHTML = calcStr;
+        }
+        if (data == "percent") {
+            total = false;
+            calcStr += "%";
+            document.getElementById("display").innerHTML = calcStr;
+        }
+
         console.log(data);
         console.log(calcStr);
         console.log(total);
