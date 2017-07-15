@@ -16,7 +16,7 @@
             <div id="header">
                 <h1 class="text-center">JS Calculator</h1>
             </div>
-            <div id="total">
+            <div id="display">
                 12345
             </div>
             <div id="history">
@@ -24,74 +24,34 @@
             </div>
             <div id="keypad">
                 <div class="row text-center">
-                    <div type="button" value="clear" class="btn key col-sm-3">
-                        <p class="extra">C</p>
-                    </div>
-                    <div type="button" value="inv" class="btn key col-sm-3">
-                        <p class="lg">&plusmn;</p>
-                    </div>
-                    <div type="button" value="percent" class="btn key col-sm-3">
-                        <p>%</p>
-                    </div>
-                    <div type="button" value="divide" class="btn key col-sm-3">
-                        <p class="lg">&divide;</p>
-                    </div>
+                    <button id="clear" class="btn key col-sm-3">C</button>
+                    <button id="inv" class="btn key col-sm-3">&plusmn;</button>
+                    <button id="percent" class="btn key col-sm-3">%</button>
+                    <button id="divide" class="btn key col-sm-3">&divide;</button>
                 </div>
                 <div class="row text-center">
-                    <div type="button" value="7" class="btn key col-sm-3">
-                        <p>7</p>
-                    </div>
-                    <div type="button" value="8" class="btn key col-sm-3">
-                        <p>8</p>
-                    </div>
-                    <div type="button" value="9" class="btn key col-sm-3">
-                        <p>9</p>
-                    </div>
-                    <div type="button" value="mult" class="btn key col-sm-3">
-                        <p class="lg">&times;</p>
-                    </div>
+                    <button id="7" class="btn key col-sm-3">7</button>
+                    <button id="8" class="btn key col-sm-3">8</button>
+                    <button id="9" class="btn key col-sm-3">9</button>
+                    <button id="mult" class="btn key col-sm-3">&times;</button>
                 </div>
                 <div class="row text-center">
-                    <div type="button" value="4" class="btn key col-sm-3">
-                        <p>4</p>
-                    </div>
-                    <div type="button" value="5" class="btn key col-sm-3">
-                        <p>5</p>
-                    </div>
-                    <div type="button" value="6" class="btn key col-sm-3">
-                        <p>6</p>
-                    </div>
-                    <div type="button" value="minus" class="btn key col-sm-3">
-                        <p class="lg">&minus;</p>
-                    </div>
+                    <button id="4" class="btn key col-sm-3">4</button>
+                    <button id="5" class="btn key col-sm-3">5</button>
+                    <button id="6" class="btn key col-sm-3">6</button>
+                    <button id="minus" class="btn key col-sm-3">&minus;</button>
                 </div>
                 <div class="row text-center">
-                    <div type="button" value="1" class="btn key col-sm-3">
-                        <p>1</p>
-                    </div>
-                    <div type="button" value="2" class="btn key col-sm-3">
-                        <p>2</p>
-                    </div>
-                    <div type="button" value="3" class="btn key col-sm-3">
-                        <p>3</p>
-                    </div>
-                    <div type="button" value="plus" class="btn key col-sm-3">
-                        <p class="lg">+</p>
-                    </div>
+                    <button id="1" class="btn key col-sm-3">1</button>
+                    <button id="2" class="btn key col-sm-3">2</button>
+                    <button id="3" class="btn key col-sm-3">3</button>
+                    <button id="plus" class="btn key col-sm-3">+</button>
                 </div>
                 <div class="row text-center">
-                    <div type="button" value="." class="btn key col-sm-3">
-                        <p>&bull;</p>
-                    </div>
-                    <div type="button" value="0" class="btn key col-sm-3">
-                        <p>0</p>
-                    </div>
-                    <div type="button" value="del" class="btn key col-sm-3">
-                        <p>DEL</p>
-                    </div>
-                    <div type="button" value="equals" class="btn key col-sm-3">
-                        <p class="extra lg">=</p>
-                    </div>
+                    <button id="." class="btn key col-sm-3">&bull;</button>
+                    <button id="0" class="btn key col-sm-3">0</button>
+                    <button id="del" class="btn key col-sm-3">DEL</button>
+                    <button id="equals" class="btn key col-sm-3">=</button>
                 </div>
             </div>
             <footer class="text-center">
