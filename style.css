@@ -24,7 +24,7 @@ h1 {
 }
 
 #calculator {
-    width: 400px;
+    max-width: 400px;
     height: 720px;
     max-width: 100%;
     background-color: #99dccb;
@@ -61,7 +61,7 @@ h1 {
 
 #keypad {
     //background-color: red;
-    max-width: 100%;
+    //max-width: 100%;
 }
 
 .row {

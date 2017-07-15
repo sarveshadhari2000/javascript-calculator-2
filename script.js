@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
     var calcStr = "";
-    var total = false;
+    var histStr = "";
+    var visible = false; //main display
+    var history_visible = false; //history display
 
     //get data when calculator key is clicked
     document.getElementById('keypad').addEventListener('click', getKey);
@@ -11,102 +13,90 @@ $(document).ready(function() {
         compute(key);
     }
 
+    //calculate percentage
+    function percent(fn) {
+        var nosym = fn;
+        console.log("test " + nosym);
+        var test = "halp!";
+        return test;
+    }
+
     function compute(data) {
         //NUMBERS
         if (data >= 0 && data <= 9) {
-            if (total) {
+            if (visible || history_visible) {
                 calcStr = "";
-                calcStr += data;
-                total = false;
-                document.getElementById("display").innerHTML = calcStr;
-
-            } else {
-                calcStr += data;
-                document.getElementById("display").innerHTML = calcStr;
-
+                histStr = "";
+                visible = false;
+                history_visible = false;
             }
+            calcStr = "";
+            calcStr += data;
+            histStr += data;
+            document.getElementById("display").innerHTML = calcStr;
+            document.getElementById("history").innerHTML = histStr;
+
             //DECIMAL
         }
         if (data == "dpoint") {
-            if (total) {
+            if (visible) {
+                visible = false;
                 calcStr = "";
                 calcStr += ".";
-                total = false;
                 document.getElementById("display").innerHTML = calcStr;
-
+                document.getElementById("history").innerHTML = histStr;
             } else {
                 calcStr += ".";
                 document.getElementById("display").innerHTML = calcStr;
-
+                document.getElementById("history").innerHTML = histStr;
             }
         }
 
         //OPERATORS
         if (data == "plus") {
-            total = false;
+            visible = false;
             calcStr += "+";
+            histStr += "+";
             document.getElementById("display").innerHTML = calcStr;
+            document.getElementById("history").innerHTML = histStr;
         }
         if (data == "minus") {
-            total = false;
+            visible = false;
             calcStr += "-";
+            histStr += "-";
             document.getElementById("display").innerHTML = calcStr;
+            document.getElementById("history").innerHTML = histStr;
         }
         if (data == "mult") {
-            total = false;
-            calcStr += "&#215;";
+            visible = false;
+            calcStr += "*";
+            histStr += "*";
             document.getElementById("display").innerHTML = calcStr;
+            document.getElementById("history").innerHTML = histStr;
         }
         if (data == "divide") {
-            total = false;
-            calcStr += "&#247;";
+            visible = false;
+            calcStr += "/";
+            histStr += "/";
             document.getElementById("display").innerHTML = calcStr;
+            document.getElementById("history").innerHTML = histStr;
         }
         if (data == "percent") {
-            total = false;
             calcStr += "%";
-            document.getElementById("display").innerHTML = calcStr;
+            histStr += "%";
+            document.getElementById("display").innerHTML = (calcStr = percent(calcStr));
+            document.getElementById("history").innerHTML = (calcStr = percent(calcStr));
         }
 
+        //EQUALS
+        if (data == "equals") {
+            visible = true;
+            history_visible = true;
+            document.getElementById("display").innerHTML = eval(histStr);
+            document.getElementById("history").innerHTML = histStr + " = " + eval(histStr);
+        }
         console.log(data);
         console.log(calcStr);
-        console.log(total);
-
-
+        console.log(visible);
     }
-
-
-
 });
-
-/*
-window.onload = function() {
-    //define numbers
-
-
-
-    //operator functions
-    function add(first, second) {
-        return first + second;
-    }
-
-    function subtract(first, second) {
-        return first - second;
-    }
-
-    function multiply(first, second) {
-        return first * second;
-    }
-
-    function divided(first, second) {
-        return first / second;
-    }
-
-    function percent(first) {
-        return first / 100;
-    }
-
-
-    percent(1, 2);
-}
-*/
