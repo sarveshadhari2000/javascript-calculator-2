@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     var calcStr = "";
     var histStr = "";
+    var total = "";
     var visible = false; //main display
     var history_visible = false; //history display
 
@@ -13,84 +14,69 @@ $(document).ready(function() {
         compute(key);
     }
 
+    //display and calulate
+    function calcIt(show, func) {
+        calcStr += show;
+        histStr += show;
+        total += func;
+        document.getElementById("display").innerHTML = calcStr;
+        document.getElementById("history").innerHTML = histStr;
+    }
+
     function compute(data) {
         //NUMBERS
         if (data >= 0 && data <= 9) {
-            if (visible || history_visible) {
+            if (visible) {
                 calcStr = "";
-                histStr = "";
                 visible = false;
-                history_visible = false;
             }
 
-            calcStr += data;
-            histStr += data;
-            document.getElementById("display").innerHTML = calcStr;
-            document.getElementById("history").innerHTML = histStr;
-            console.log(data);
-
-            //DECIMAL
+            calcIt(data, data);
         }
+
+        //DECIMAL
         if (data == "dpoint") {
             if (visible) {
                 calcStr += ".";
                 document.getElementById("display").innerHTML = calcStr;
                 document.getElementById("history").innerHTML = histStr;
             } else {
-                calcStr += ".";
-                histStr += ".";
-                document.getElementById("display").innerHTML = calcStr;
-                document.getElementById("history").innerHTML = histStr;
+                calcIt(".", ".");
             }
         }
 
         //OPERATORS
         if (data == "plus") {
-            calcStr += "+";
-            histStr += "+";
-            document.getElementById("display").innerHTML = calcStr;
-            document.getElementById("history").innerHTML = histStr;
+            calcIt(" + ", "+");
         }
         if (data == "minus") {
-            calcStr += "-";
-            histStr += "-";
-            document.getElementById("display").innerHTML = calcStr;
-            document.getElementById("history").innerHTML = histStr;
+            calcIt(" - ", "-");
         }
         if (data == "mult") {
-            calcStr += "*";
-            histStr += "*";
-            document.getElementById("display").innerHTML = calcStr;
-            document.getElementById("history").innerHTML = histStr;
+            calcIt(" &#215; ", "*");
         }
         if (data == "divide") {
-            calcStr += "/";
-            histStr += "/";
-            document.getElementById("display").innerHTML = calcStr;
-            document.getElementById("history").innerHTML = histStr;
-
+            calcIt(" &#247; ", "/");
         }
 
         //EQUALS
         if (data == "equals") {
             visible = true;
-            history_visible = true;
-            document.getElementById("display").innerHTML = eval(histStr);
-            document.getElementById("history").innerHTML = histStr + " = " + eval(calcStr);
+            histStr += " = \xa0" + eval(total);
+            document.getElementById("display").innerHTML = eval(total);
+            document.getElementById("history").innerHTML = histStr;
+            total = document.getElementById("display").innerHTML;
         }
 
         //CLEAR
         if (data == "clear") {
             calcStr = "";
             histStr = "";
+            total = "";
             visible = false;
             history_visible = false;
             document.getElementById("display").innerHTML = "0";
             document.getElementById("history").innerHTML = "0";
         }
-
-        console.log(calcStr);
-        console.log(histStr);
-        console.log(visible);
     }
 });
