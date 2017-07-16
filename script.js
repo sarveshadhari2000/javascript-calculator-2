@@ -78,5 +78,13 @@ $(document).ready(function() {
             document.getElementById("display").innerHTML = "0";
             document.getElementById("history").innerHTML = "0";
         }
+        if (data == "delete") {
+            calcStr = calcStr.slice(0, -1);
+            histStr = histStr.slice(0, -1);
+            total = total.slice(0, -1);
+            document.getElementById("display").innerHTML = calcStr;
+            document.getElementById("history").innerHTML = histStr;
+            
+        }
     }
 });
