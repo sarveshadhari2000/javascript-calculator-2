@@ -142,8 +142,8 @@ $(document).ready(function() {
 
         console.log(total);
 
-        if (calcStr.length > 15 || total == "NaN") {
-                document.getElementById("display").innerHTML = "ERROR";
+        if (calcStr.length > 25 || total == "NaN") {
+                document.getElementById("display").innerHTML = "Error";
         document.getElementById("history").innerHTML = "0";
         return 0;
             }
