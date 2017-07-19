@@ -22,6 +22,8 @@ h1 {
     margin: 0;
 }
 
+
+
 .container-fluid {
     padding: 0;
     height: 100%;
@@ -29,11 +31,9 @@ h1 {
 }
 
 #calculator {
-    max-width: 400px;
-    //height: 720px;
     height: 100%;
     max-width: 100%;
-    //background-color: #99dccb;
+    background-color: #99dccb;
     //margin: 0 auto;
     //position: absolute;
     top: 0;
@@ -41,12 +41,13 @@ h1 {
     left: 0;
     right: 0;
     margin: auto;
-    border-radius: 10px;
+    //border-radius: 10px;
 }
 #header {
     background-color: #99dccb;
     padding: 0 10px;
     height: 11%;
+    //border-radius: 10px;
 }
 #display,
 #history {
@@ -102,4 +103,32 @@ h1 {
 footer {
     font-size: 3vh;
     height: 5%;
+}
+
+@media (min-width: 769px) {
+    #calculator {
+        width: 400px;
+        height: 720px;
+        margin-top: 75px;
+        border-radius: 10px;
+    }
+    h1 {
+        font-size: 3.5em;
+        padding-top: 6px;
+    }
+    #header {
+        border-radius: 10px;
+    }
+    #display {
+        font-size: 5em;
+    }
+    #history {
+        font-size: 1.3em;
+    }
+    .btn {
+        font-size: 2.2em;
+    }
+    footer {
+        font-size: 1.3em;
+    }
 }
