@@ -1,0 +1,113 @@
+[33mcommit 8d1265d7797d01c6440ebc2eb72f66e0df1535b1[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 23:21:26 2017 -0400
+
+    Make display and history total seperate from running total
+
+[33mcommit ba5bc66af55ecc9b746f3f0bb5e336d2f99d1552[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 22:24:59 2017 -0400
+
+    Add clear function
+
+[33mcommit a0cbd6db838019aed9186227807b9d47df4b4062[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 19:46:05 2017 -0400
+
+    Change layout of calculator
+
+[33mcommit 37e0c645fabd8bd98ff977f7675d2129fb8ffbfb[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 17:16:36 2017 -0400
+
+    Display calculations on display and show history
+
+[33mcommit d9bd210008a880ce30a600190b5398d1f397ee60[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 12:29:53 2017 -0400
+
+    Add operators to display
+
+[33mcommit 64947e3c574515eede6f61d0958a65a98989d04a[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 11:49:58 2017 -0400
+
+    Show decimal in display
+
+[33mcommit 0f541b85a9d40197614815c3e11dfd18c4782e06[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 11:31:40 2017 -0400
+
+    Show numbers in a string when clicked
+
+[33mcommit 130a22b8105a1482efb2d352e2e28fc24359b63b[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 05:36:09 2017 -0400
+
+    Show numbers on display as typed
+
+[33mcommit 66a0d4b023442bdae04484d05064d765a2dfbc77[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 04:24:10 2017 -0400
+
+    Display key pressed to calc screen
+
+[33mcommit 9f2f75cb4b995a64c430756b163cec1e9d87ba2e[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 04:14:15 2017 -0400
+
+    Access key to process calc data in another function
+
+[33mcommit 20dbf5dbefd4bcf879917ada989ca68d227c2ee8[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 03:23:23 2017 -0400
+
+    Update button styling
+
+[33mcommit c5b8fa5aaa523de372912b5db580978f8e9417c9[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Sat Jul 15 02:49:54 2017 -0400
+
+    Get data when caluclator key is pushed
+
+[33mcommit e90d8fbf1ebc3c779cc9eacce9acd770b6aacf46[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Fri Jul 14 22:11:51 2017 -0400
+
+    Change font and font sizes
+
+[33mcommit fe35da8dd594686662d167f4bdb9c4aa386c7271[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Fri Jul 14 12:11:38 2017 -0400
+
+    Change key identifiers from class to  values
+
+[33mcommit 45f186af1c7da4f47b0b30795179657f81baa544[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Fri Jul 14 12:03:00 2017 -0400
+
+    Make keypad into buttons, Add 1-3 row
+
+[33mcommit 5c95d9c204d101b422c17d5e8c932588b5533542[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Fri Jul 14 11:50:43 2017 -0400
+
+    Add numbers to calculator
+
+[33mcommit 18c77eef195b6dbe6a608eb5e190f48a42282311[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Fri Jul 14 04:23:53 2017 -0400
+
+    Add Google font and text formmatting
+
+[33mcommit 86e6436cfec553a94d4d27266a912d7f8564dac2[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Thu Jul 13 17:23:25 2017 -0400
+
+    Set up layout and colour scheme
+
+[33mcommit aef6ce5e5e65b6f79117ea8188581271172f5297[m
+Author: CNDavidson <cndragn@gmail.com>
+Date:   Thu Jul 13 16:00:21 2017 -0400
+
+    Initial commit

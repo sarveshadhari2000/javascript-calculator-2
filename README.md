@@ -1,17 +1,16 @@
 # JavaScript Calculator
-* **Challenge:** [Build a JavaScript Calculator](https://www.freecodecamp.org/challenges/build-a-javascript-calculator)
-* **Objective:**
-  * Build an app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/rLJZrA
-* **User Stories:**
-  * I can add, subtract, multiply and divide two numbers.
-  * I can clear the input field with a clear button.
-  * I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output.
+Need to do some simple math but your fingers are tired? Javascript Calculator to the rescue!
   
 ## Project Details
 
 **View My Project:** http://candicedavidson.com/portfolio/calculator/
 
-![JavaScript Calculator](http://candicedavidson.com/images/calculator.png)
+![Unsolicited Advice Generator](https://github.com/cndragn/portfolio/blob/master/images/calculator.png)
+
+## Features
+  * Calculations as you would expect from a basic calculator
+  * History view to keep track of previous calculations
+  * Full screen mobile view for ease of use
 
 ## Technologies Used
 
@@ -19,3 +18,6 @@
 * Bootstrap
 * JavaScript
 * jQuery
+
+## Acknowledgements
+Project idea: [FCC Build a JavaScript Calculator](https://www.freecodecamp.org/challenges/build-a-javascript-calculator)
