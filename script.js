@@ -13,6 +13,28 @@ $(document).ready(function() {
 
     function getKey(k) {
         var key = k.target.id;
+        switch (key) {
+            case 'zero': key = 0;
+                break;
+            case 'one': key = 1;
+                break;
+            case 'two': key = 2;
+                break;
+            case 'three': key = 3;
+                break;
+            case 'four': key = 4;
+                break;
+            case 'five': key = 5;
+                break;
+            case 'six': key = 6;
+                break;
+            case 'seven': key = 7;
+                break;
+            case 'eight': key = 8;
+                break;
+            case 'nine': key = 9;
+                break;
+        }
         compute(key);
     }
 
@@ -25,8 +47,23 @@ $(document).ready(function() {
         document.getElementById("history").innerHTML = histStr;
     }
 
+    function deleteOne() {
+        calcStr = calcStr.slice(0, -1);
+        histStr = histStr.slice(0, -1);
+        total = total.slice(0, -1);
+        console.log(calcStr);
+        console.log(histStr);
+
+        document.getElementById("display").innerHTML = calcStr;
+        document.getElementById("history").innerHTML = histStr;
+    }
+
     function compute(data) {
         //NUMBERS
+        if (calcStr === "" && data === 0) {
+            return 0;
+        }
+
         if (data >= 0 && data <= 9) {
             if (visible) {
                 calcStr = "";
@@ -40,7 +77,7 @@ $(document).ready(function() {
         }
 
         //DECIMAL
-        if (data == "dpoint") {
+        if (data == "decimal") {
             if (dpoint_active === false) {
                 return 0;
             }
@@ -59,18 +96,24 @@ $(document).ready(function() {
         }
 
         //OPERATORS
-        if (data == "plus") {
-             if (total == "" || oper_active == false) {
+        if (data == "add") {
+             if (total == "" ) {
                 return 0;
+            }
+            if (oper_active == false) {
+                deleteOne();
             }
             visible = false;
             dpoint_active = true;
             calcIt(" + ", "+");
             oper_active = false;
         }
-        if (data == "minus") {
-              if (total == "" || oper_active == false) {
+        if (data == "subtract") {
+              if (total == "") {
                 return 0;
+            }
+            if (oper_active == false) {
+                deleteOne();
             }
             visible = false;
             dpoint_active = true;
@@ -78,9 +121,12 @@ $(document).ready(function() {
             calcIt(" - ", "-");
             oper_active = false;
         }
-        if (data == "mult") {
-            if (total == "" || oper_active == false) {
+        if (data == "multiply") {
+            if (total == "") {
                 return 0;
+            }
+            if (oper_active == false) {
+                deleteOne();
             }
             visible = false;
             dpoint_active = true;
@@ -88,8 +134,11 @@ $(document).ready(function() {
             calcIt(" &#215; ", "*");
         }
         if (data == "divide") {
-            if (total == "" || oper_active == false) {
+            if (total == "") {
                 return 0;
+            }
+            if (oper_active == false) {
+                deleteOne();
             }
             visible = false;
             dpoint_active = true;
@@ -122,6 +171,8 @@ $(document).ready(function() {
             document.getElementById("display").innerHTML = "0";
             document.getElementById("history").innerHTML = "0";
         }
+
+        //DELETE
         if (data == "delete") {
             if (visible == true || calcStr == "" || calcStr.length == 1) {
                 calcStr = "0";
@@ -130,17 +181,11 @@ $(document).ready(function() {
                 document.getElementById("history").innerHTML = histStr;
                 return 0;
             }
-            calcStr = calcStr.slice(0, -1);
-            histStr = histStr.slice(0, -1);
-            total = total.slice(0, -1);
-            console.log(calcStr);
-            document.getElementById("display").innerHTML = calcStr;
-            document.getElementById("history").innerHTML = histStr;
+
+            deleteOne();
 
         }
         //ERRORS
-
-        console.log(total);
 
         if (calcStr.length > 25 || total == "NaN") {
                 document.getElementById("display").innerHTML = "Error";

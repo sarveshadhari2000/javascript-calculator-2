@@ -98,6 +98,10 @@ h1 {
     font-variant: small-caps;
     font-size: 6vh;
 }
+#decimal {
+    font-size: 6rem;
+    line-height: 0;
+}
 footer {
     font-size: 3vh;
     height: 5%;
