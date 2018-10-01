@@ -1,12 +1,11 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    var calcStr = "";
-    var histStr = "";
-    var total = "";
+    var calcStr = ""; // main display
+    var histStr = ""; // history display
+    var total = ""; // running total
     var visible = false; //main display
-    var history_visible = false; //history display
-    var dpoint_active = true;
-    var oper_active = true;
+    var dpoint_active = true; // able to create decimal
+    var oper_active = true; // able to use operator
 
     //get data when calculator key is clicked
     document.getElementById('keypad').addEventListener('click', getKey);
@@ -39,23 +38,23 @@ $(document).ready(function() {
     }
 
     //display and calulate
+    function displayIt(display, history) {
+        document.getElementById("display").innerHTML = display;
+        document.getElementById("history").innerHTML = history;
+    }
+
     function calcIt(show, func) {
         calcStr += show;
         histStr += show;
         total += func;
-        document.getElementById("display").innerHTML = calcStr;
-        document.getElementById("history").innerHTML = histStr;
+        displayIt(calcStr, histStr);
     }
 
     function deleteOne() {
         calcStr = calcStr.slice(0, -1);
         histStr = histStr.slice(0, -1);
         total = total.slice(0, -1);
-        console.log(calcStr);
-        console.log(histStr);
-
-        document.getElementById("display").innerHTML = calcStr;
-        document.getElementById("history").innerHTML = histStr;
+        displayIt(calcStr, histStr);
     }
 
     function compute(data) {
@@ -71,7 +70,7 @@ $(document).ready(function() {
                 total = "";
                 visible = false;
             }
-            
+
             oper_active = true;
             calcIt(data, data);
         }
@@ -86,8 +85,7 @@ $(document).ready(function() {
                 histStr = "0.";
                 total = "0.";
                 visible = false;
-                document.getElementById("display").innerHTML = calcStr;
-                document.getElementById("history").innerHTML = histStr;
+                displayIt(calcStr, histStr);
                 dpoint_active = false;
             } else {
                 calcIt(".", ".");
@@ -97,7 +95,7 @@ $(document).ready(function() {
 
         //OPERATORS
         if (data == "add") {
-             if (total == "" ) {
+            if (total == "") {
                 return 0;
             }
             if (oper_active == false) {
@@ -105,11 +103,11 @@ $(document).ready(function() {
             }
             visible = false;
             dpoint_active = true;
-            calcIt(" + ", "+");
+            calcIt("+", "+");
             oper_active = false;
         }
         if (data == "subtract") {
-              if (total == "") {
+            if (total == "") {
                 return 0;
             }
             if (oper_active == false) {
@@ -117,8 +115,7 @@ $(document).ready(function() {
             }
             visible = false;
             dpoint_active = true;
-            oper_active = false;
-            calcIt(" - ", "-");
+            calcIt("-", "-");
             oper_active = false;
         }
         if (data == "multiply") {
@@ -131,7 +128,7 @@ $(document).ready(function() {
             visible = false;
             dpoint_active = true;
             oper_active = false;
-            calcIt(" &#215; ", "*");
+            calcIt("x", "*");
         }
         if (data == "divide") {
             if (total == "") {
@@ -143,19 +140,18 @@ $(document).ready(function() {
             visible = false;
             dpoint_active = true;
             oper_active = false;
-            calcIt(" &#247; ", "/");
+            calcIt("/", "/");
         }
 
         //EQUALS
         if (data == "equals") {
-             if (total == "" || visible) {
+            if (total == "" || visible) {
                 return 0;
             }
             visible = true;
             dpoint_active = true;
             histStr += " = \xa0" + eval(total);
-            document.getElementById("display").innerHTML = eval(total);
-            document.getElementById("history").innerHTML = histStr;
+            displayIt(eval(total), histStr);
             total = document.getElementById("display").innerHTML;
             calcStr = total;
         }
@@ -166,10 +162,8 @@ $(document).ready(function() {
             histStr = "";
             total = "";
             visible = false;
-            history_visible = false;
             dpoint_active = true;
-            document.getElementById("display").innerHTML = "0";
-            document.getElementById("history").innerHTML = "0";
+            displayIt("0", "0");
         }
 
         //DELETE
@@ -177,8 +171,7 @@ $(document).ready(function() {
             if (visible == true || calcStr == "" || calcStr.length == 1) {
                 calcStr = "0";
                 histStr = "0";
-                document.getElementById("display").innerHTML = calcStr;
-                document.getElementById("history").innerHTML = histStr;
+                displayIt(calcStr, histStr);
                 return 0;
             }
 
@@ -188,9 +181,14 @@ $(document).ready(function() {
         //ERRORS
 
         if (calcStr.length > 25 || total == "NaN") {
-                document.getElementById("display").innerHTML = "Error";
-        document.getElementById("history").innerHTML = "0";
-        return 0;
-            }
+            displayIt("Error","0");
+            return 0;
+        }
+        console.log("***")
+        console.log(`Display ${calcStr}`);
+        console.log(`History ${histStr}`);
+        console.log(`Total ${total}`);
+        console.log("---");
+
     }
 });
